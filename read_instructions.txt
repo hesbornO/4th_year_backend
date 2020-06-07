@@ -1,0 +1,185 @@
+Start docker
+
+Open 2 WSL windows (ubuntu)
+[sudo pass: no_@]
+
+#####################################
+>>>window 1
+#####################################
+source ~/.profile
+
+sudo mkdir /d/
+
+sudo mount --bind /mnt/d /d
+
+cd /d/csc/csc/csc_416_project/project/workspace/fabric-dev-servers
+
+
+./startFabric.sh
+
+./createPeerAdminCard.sh
+
+composer-playground
+(server started)
+
+
+#check running docker images
+docker images
+
+###################################
+>>>window 2
+###################################
+https://hyperledger.github.io/composer/v0.19/tutorials/developer-tutorial
+
+source ~/.profile
+
+sudo mount --bind /mnt/d /d
+
+cd /d/csc/csc/csc_416_project/project/workspace/fabric-dev-servers
+(new project)
+#If starting a new business network
+	yo hyperledger-composer:businessnetwork
+
+#else, continue
+
+Go to project folder
+cd my-land-registry
+
+CREATE BNA
+composer archive create -t dir -n .
+
+DEPLOY BUSINESS NETWORK
+composer network install --card PeerAdmin@hlfv1 --archiveFile my-land-registry@0.0.5.bna
+
+START BUSINESS NETWORK
+#create card
+composer network start --networkName my-land-registry --networkVersion 0.0.5 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+
+//network is started
+
+//import card (fabric-dev-servers directory)
+composer card import --file networkadmin.card
+
+//start server
+
+composer-rest-server -c admin@my-land-registry -n never -u true -w true
+
+composer-rest-server
+- admin@my-land-registry
+- never use namespaces
+- no
+- yes
+- no
+
+
+
+REST server API
+localhost:3000
+
+
+####
+end of wsl 2
+####
+
+
+####
+angular app
+####
+
+https://www.npmjs.com/package/generator-hyperledger-composer
+
+Running the app generator
+	yo hyperledger-composer
+
+end of angular app
+####
+
+DOCKER COMMANDS
+# Docker
+# Stop all containers
+docker stop $(docker ps -a -q)
+# Delete all containers
+docker rm $(docker ps -a -q)
+
+#Get docker IDs and remove manually
+docker ps -aq
+$ docker stop <docker id>
+$ docker rm <docker id>
+
+#import card
+composer card import --file networkadmin.card
+
+#ping network card
+composer network ping --card admin@tutorial-network
+
+
+# view business cards
+composer card list --card admin@land-registry
+
+# delete network card
+composer card delete --name admin@tutorial-network
+
+#JS warning
+
+
+
+# ISSUES TO FIX
+
+
+1.
+https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4
+
+#2. Hyperledger set up
+https://medium.com/@eSizeDave/https-medium-com-esizedave-how-to-install-hyperledger-fabric-1-2-on-ubuntu-16-04-lts-ecdfa4dcec72
+
+https://hackernoon.com/hyperledger-fabric-installation-guide-74065855eca9
+
+#2.1 Node issues
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+#2.2 Installing python
+https://letmespeakweb.wordpress.com/2016/08/15/how-to-install-python-2-7-10-on-ubuntu-16-04/
+
+3. Installing composer(exclude version from commands)
+https://hyperledger.github.io/composer/v0.19/installing/development-tools.html
+
+
+https://hyperledger.github.io/composer/v0.19/installing/installing-prereqs.html
+
+4. Installing python 2.7.10
+https://letmespeakweb.wordpress.com/2016/08/15/how-to-install-python-2-7-10-on-ubuntu-16-04/
+
+
+dpkg_1.19.7ubuntu3_i386.deb
+
+5. Installing composer-cli
+sudo npm install --unsafe-perm --verbose -g composer-cli@0.19    
+https://github.com/nodejs/node-gyp/issues/454
+
+
+>DOCKER-COMPOSE.YML not found
+-https://github.com/EugenMayer/docker-sync/issues/582
+	docker-sync start  	on your Linux subsystem 
+	docker-compose up 	on PowerShell
+
+>SETTING UP WSL
+ - Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+
+> CONNECTING DOCKER TO WSL (done before installing fabric on wsl)
+
+
+# installing docker
+sudo apt install libltdl7
+wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb
+sudo dpkg -i docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb
+
+//sudo apt-get install docker-ce=17.03.2~ce-0~ubuntu-xenial//
+https://askubuntu.com/questions/1062829/cannot-install-docker-version-17-03-2-from-ubuntu-bionic-18-04-server
+
+
+https://www.edureka.co/community/29600/hyperledger-fabric-container-response-container-running
+git clone https://github.com/hyperledger/fabric-samples.git
+
+
+> What is a container?
+https://www.docker.com/resources/what-container
