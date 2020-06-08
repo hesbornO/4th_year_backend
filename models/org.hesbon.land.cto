@@ -47,6 +47,7 @@ event SampleEvent {
  */
 
 namespace org.hesbon.land
+// Land asset
 asset Land identified by LRNo {    
 	  o String tid
     o String LRNo
@@ -66,6 +67,7 @@ asset Land identified by LRNo {
     o String nextOfKin    
     o String timestamp
 }
+// caveat asset
 asset Caveat identified by CaveatId {    
     o String tid
     o String CaveatId
@@ -77,7 +79,7 @@ asset Caveat identified by CaveatId {
     o String removalRemarks optional
     o String dateRemoved optional
 }
-
+// land owner asset
 participant owner identified by Surname {
     o String tid    
     o String Surname
@@ -87,7 +89,15 @@ participant owner identified by Surname {
     o String timestamp
     
 }
+// transfer land asset transaction
 transaction transferLand {
     --> Land landAsset
     --> owner newOwner
+}
+// add land asset event
+event addedNewLandAsset {
+  --> Land landAsset
+  o Integer howManyBefore
+  o Integer howManyAfter
+
 }
