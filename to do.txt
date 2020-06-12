@@ -1,0 +1,74 @@
+Transfer asset
+
+Give notification to user upon land transfer
+
+Land status
+
+refresh page after form submission 
+-I tried header(Location:'url');
+
+
+
+Auto-increment LRNo
+Attach caveat status
+Google maps
+
+
+Attach next of kin to owner
+
+add user profile admin
+
+
+
+
+
+
+
+
+
+
+{
+  "$class": "org.hesbon.land.Owner",
+  "Surname": "John",
+  "OtherNames": "j",
+  "addedBy": "admin",
+  "nextOfKin": "johnjnr",
+  "timestamp": "today"
+}
+{
+  "$class": "org.hesbon.land.Owner",
+  "Surname": "James",
+  "OtherNames": "ja",
+  "addedBy": "admin",
+  "nextOfKin": "jamesjnr",
+  "timestamp": "today"
+}
+
+{
+  "$class": "org.hesbon.land.Land",
+  "LRNo": "lr1",
+  "OldRef": "ol1",
+  "County": "A",
+  "SubCounty": "a",
+  "Ward": "w",
+  "Town": "t",
+  "PhysicalLocation": "pl",
+  "Area": "20",
+  "LandUse": "farm",
+  "SiteValue": 20,
+  "ValuationMethod": "analysis",
+  "AccumulatedPenalties": 10,
+  "owner": "resource:org.hesbon.land.Owner#John"
+}
+
+
+
+
+
+
+
+
+
+
+
+

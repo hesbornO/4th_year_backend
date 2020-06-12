@@ -15,32 +15,7 @@
 /**
  * Write your model definitions here
  */
-/*
-namespace org.hesbon.land
 
-participant SampleParticipant identified by participantId {
-  o String participantId
-  o String firstName
-  o String lastName
-}
-
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
-}
-
-transaction SampleTransaction {
-  --> SampleAsset asset
-  o String newValue
-}
-
-event SampleEvent {
-  --> SampleAsset asset
-  o String oldValue
-  o String newValue
-}
-*/
 
 /**
  * My commodity trading network
@@ -48,8 +23,7 @@ event SampleEvent {
 
 namespace org.hesbon.land
 // Land asset
-asset Land identified by LRNo {    
-	  o String tid
+asset Land identified by LRNo {    	  
     o String LRNo
     o String OldRef
     o String CaveatStatus optional
@@ -63,13 +37,12 @@ asset Land identified by LRNo {
     o Double SiteValue
     o String ValuationMethod
     o Double AccumulatedPenalties    
-    --> owner Owner
-    o String nextOfKin    
-    o String timestamp
+    --> Owner owner        
+    o String timestamp optional
 }
 // caveat asset
 asset Caveat identified by CaveatId {    
-    o String tid
+    
     o String CaveatId
     o String LRNo 
     o String reasonForCaveat 
@@ -80,19 +53,17 @@ asset Caveat identified by CaveatId {
     o String dateRemoved optional
 }
 // land owner asset
-participant owner identified by Surname {
-    o String tid    
+participant Owner identified by Surname {       
     o String Surname
     o String OtherNames
     o String addedBy
     o String nextOfKin
-    o String timestamp
-    
+    o String timestamp    
 }
 // transfer land asset transaction
 transaction transferLand {
     --> Land landAsset
-    --> owner newOwner
+    --> Owner newOwner
 }
 // add land asset event
 event addedNewLandAsset {
