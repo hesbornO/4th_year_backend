@@ -18,6 +18,8 @@ Google maps
 add user profile admin
 
 compare form details to ensure no double entry (compare hashes?)
+Find out various land valuation methods
+Various land uses
 
 
 

@@ -1,0 +1,8 @@
+// http://localhost:3000/api/queries/getCommodityHistorian?commodity=resource%3Aorg.evin.book.track.Commodity%23C_001
+  // resource:org.evin.book.track.Commodity#C_001
+  query getCommodityHistorian {
+     description:"get history of Land transaction"
+     statement:
+         SELECT org.hesbon.land.transferLand
+         WHERE (landAsset == _$landAsset)
+  }
