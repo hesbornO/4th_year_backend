@@ -14,11 +14,10 @@ Attach caveat status
 Google maps
 
 
-Attach next of kin to owner
 
 add user profile admin
 
-
+compare form details to ensure no double entry (compare hashes?)
 
 
 

@@ -38,6 +38,7 @@ asset Land identified by LRNo {
     o String ValuationMethod
     o Double AccumulatedPenalties    
     --> Owner owner        
+    o String Telephone 
     o String timestamp optional
 }
 // caveat asset
@@ -53,7 +54,8 @@ asset Caveat identified by CaveatId {
     o String dateRemoved optional
 }
 // land owner asset
-participant Owner identified by Surname {       
+participant Owner identified by OwnerID {       
+    o String OwnerID
     o String Surname
     o String OtherNames
     o String addedBy

@@ -6,6 +6,7 @@ Open 2 WSL windows (ubuntu)
 #####################################
 >>>window 1
 #####################################
+
 source ~/.profile
 
 sudo mkdir /d/
@@ -49,11 +50,11 @@ CREATE BNA
 composer archive create -t dir -n .
 
 DEPLOY BUSINESS NETWORK
-composer network install --card PeerAdmin@hlfv1 --archiveFile my-land-registry@0.0.5.bna
+composer network install --card PeerAdmin@hlfv1 --archiveFile my-land-registry@0.0.9.bna
 
 START BUSINESS NETWORK
 #create card
-composer network start --networkName my-land-registry --networkVersion 0.0.5 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+composer network start --networkName my-land-registry --networkVersion 0.0.9 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
 
 //network is started
 
@@ -82,6 +83,19 @@ end of wsl 2
 ####
 
 
+########
+RESTARTING NETWORK
+########
+start our business network 
+> composer network start --networkName my-land-registry --networkVersion 0.0.8 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+
+If started before upgrade version version above 0.0.1 [upgrade]
+> 
+composer network upgrade -c PeerAdmin@hlfv1 -n my-land-registry -V 0.0.8
+
+
+
+
 ####
 angular app
 ####
@@ -96,6 +110,8 @@ end of angular app
 
 DOCKER COMMANDS
 # Docker
+#list all containers
+docker ps -a -q
 # Stop all containers
 docker stop $(docker ps -a -q)
 # Delete all containers
