@@ -50,11 +50,11 @@ CREATE BNA
 composer archive create -t dir -n .
 
 DEPLOY BUSINESS NETWORK
-composer network install --card PeerAdmin@hlfv1 --archiveFile my-land-registry@0.0.10.bna
+composer network install --card PeerAdmin@hlfv1 --archiveFile my-land-registry@0.0.11.bna
 
 START BUSINESS NETWORK
 #create card
-composer network start --networkName my-land-registry --networkVersion 0.0.9 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+composer network start --networkName my-land-registry --networkVersion 0.0.11 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
 
 //network is started
 
@@ -91,7 +91,7 @@ start our business network
 
 If started before upgrade version version above 0.0.1 [upgrade]
 > 
-composer network upgrade -c PeerAdmin@hlfv1 -n my-land-registry -V 0.0.10
+composer network upgrade -c PeerAdmin@hlfv1 -n my-land-registry -V 0.0.11
 
 
 

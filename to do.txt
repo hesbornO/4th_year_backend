@@ -1,25 +1,24 @@
+DONE
 Transfer asset
 
+
+
+TO DO
 Give notification to user upon land transfer
-
 Land status
-
 refresh page after form submission 
 -I tried header(Location:'url');
-
-
 
 Auto-increment LRNo
 Attach caveat status
 Google maps
 
-
-
 add user profile admin
-
 compare form details to ensure no double entry (compare hashes?)
 Find out various land valuation methods
 Various land uses
+add copy button/feature to 'borrowed' fields
+add postedby/addedby field to forms(current system user)
 
 
 
