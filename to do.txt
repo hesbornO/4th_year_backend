@@ -1,25 +1,36 @@
 DONE
-Transfer asset
-
-
+1. Transfer asset(resource:org.hesbon.land.Land#LR022)
+2. refresh page after form submission DONE
+-ajax form submission reload DONE
+-display successful submission message for three seconds-used alert-DONE
+3. Give notification to owner upon land transfer
+8. Auto-increment LRNo, done; not necessary, @ is unique
+13. Find out various land valuation methods
+14. Various land uses
 
 TO DO
-Give notification to user upon land transfer
-Land status
-refresh page after form submission 
--I tried header(Location:'url');
 
-Auto-increment LRNo
-Attach caveat status
-Google maps
+4. Land status
+5. Sub-division of land (if land is sub-divided, do not transfer original)
+6. Taxation
 
-add user profile admin
-compare form details to ensure no double entry (compare hashes?)
-Find out various land valuation methods
-Various land uses
-add copy button/feature to 'borrowed' fields
-add postedby/addedby field to forms(current system user)
+7. Verify LRNo & newOwner before form submission
 
+9. Attach caveat status
+10. Google maps
+
+11. add user profile admin
+12. compare form details to ensure no double entry (compare hashes?)
+
+15. add copy button/feature to 'borrowed' fields
+16. add postedby/addedby field to forms(current system user)
+17. display all land assets owned by a single owner
+18. file upload not complete
+19. Authentication (Login)
+20. Authorization(Resource access)
+21. Session management
+22. Hash form values before posting
+23. QGIS
 
 
 
@@ -64,7 +75,14 @@ add postedby/addedby field to forms(current system user)
 
 
 
-
+KNOWLEDGE CENTER
+>>Hyperledger Fabric Databases
+>LevelDB; default, embedded in peer node, stores chaincode data as simple key-value pairs
+>CouchDB; optional alternate state db that supports rich queries when chaincode data values
+are modeled as JSON. 
+>> hyperledger fabric is a framework
+>> hyperledger composer is a tool for building blockchain business networks
+>> What is a private blockchain?
 
 
 

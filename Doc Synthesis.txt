@@ -1,0 +1,15 @@
+INTRO
+Purpose
+Key functions
+
+OBJECTIVES
+Main system functionality specifications
+
+OVERVIEW
+Overall design overview
+
+DESCRIPTION OF MODULES
+
+FUTURE MODULES
+
+BENEFITS OF THE SYSTEM

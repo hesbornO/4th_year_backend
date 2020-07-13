@@ -26,7 +26,7 @@ namespace org.hesbon.land
 asset Land identified by LRNo {    	  
     o String LRNo
     o String OldRef
-    o String CaveatStatus optional
+    // o String CaveatStatus optional
     o String County
     o String SubCounty
     o String Ward
@@ -39,7 +39,9 @@ asset Land identified by LRNo {
     o Double AccumulatedPenalties    
     --> Owner owner        
     o String Telephone 
-    o String timestamp optional
+    o String addedBy 
+    o Integer partitionCount default = 0
+    o String timestamp 
 }
 // caveat asset
 asset Caveat identified by CaveatId {    
@@ -48,10 +50,10 @@ asset Caveat identified by CaveatId {
     o String LRNo 
     o String reasonForCaveat 
     o String postRemarks optional
-    o String postedBy 
+    o String postedBy optional
     o String datePosted
-    o String removalRemarks optional
-    o String dateRemoved optional
+    // o String removalRemarks optional
+    // o String dateRemoved optional
 }
 // land owner asset
 participant Owner identified by OwnerID {       
@@ -64,6 +66,7 @@ participant Owner identified by OwnerID {
 }
 // transfer land asset transaction
 transaction transferLand {
+    o String participantInvoking    
     --> Land landAsset
     --> Owner newOwner
 }

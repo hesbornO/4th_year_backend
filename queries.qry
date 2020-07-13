@@ -6,3 +6,10 @@
          SELECT org.hesbon.land.transferLand
          WHERE (landAsset == _$landAsset)
   }
+
+  query getCaveatRecord {
+     description:"check if caveat exists on given piece of land identified by LRNo"
+     statement:
+         SELECT org.hesbon.land.Caveat
+         WHERE (LRNo == _$LRNo)
+  }
